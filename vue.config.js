@@ -35,7 +35,7 @@ module.exports = {
     sourceMap: false,
     // css预设器配置项
     loaderOptions: {
-      scss: {
+      sass: {
         // @/ 是 src/ 的别名
         // 所以这里假设你有 `src/variables.sass` 这个文件
         data: `@import "~@/assets/styles/main.scss";`
@@ -59,7 +59,18 @@ module.exports = {
     https: false, // 编译失败时刷新页面
     hot: true, // 开启热加载
     hotOnly: false,
-    proxy: null, // 设置代理
+  //  设置代理
+  proxy: {
+    '/api': {    
+      target: 'http://www.web-jshtml.cn/api',
+      ws: true,
+      changeOrigin: true,
+      pathRewrite:{
+          '^/api':''
+      }
+  }
+},
+  
     overlay: { // 全屏模式下是否显示脚本错误
       warnings: true,
       errors: true
