@@ -1,5 +1,5 @@
 <template>
-  <div>我是子组件{{ plusOne}}</div>
+  <div @click="setCount">我是子组件{{msg}}</div>
 </template>
 
 <script>
@@ -8,16 +8,19 @@ export default {
   props: {
     zc: String
   },
-  setup() {
-    const count = ref(1);
-    const plusOne = computed({
-  get: () => count.value + 1,
-  set: val => { count.value = val - 1 }
-})
-// plusOne.value =4
-    return {
-      plusOne
-    };
+  setup(props,{root}) {
+  const setCount = ()=>{
+    root.$store.dispatch('setCount')
+  }
+  const msg = computed(()=>{
+     return root.$store.state.app.zc
+  })
+  return{
+    msg,
+    setCount
+    
+  }
+   
   }
 };
 </script>

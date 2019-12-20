@@ -4,7 +4,6 @@
    <test zc='我是传个子组件的' />
   </div>
 </template>
-
 <script>
  import test from './test'
   export default {
