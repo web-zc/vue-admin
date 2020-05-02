@@ -36,14 +36,14 @@ export default {
     // data数据
     const isCollapse = ref(false);
     const routes = reactive(root.$router.options.routes);
-    console.log(routes);
+   
 
     // 方法
     const handleOpen = (key, keyPath) => {
-      console.log(key, keyPath);
+      
     };
     const handleClose = (key, keyPath) => {
-      console.log(key, keyPath);
+     
     };
     return {
       isCollapse,
