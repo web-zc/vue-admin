@@ -1,6 +1,16 @@
-const app = {
-  state:{
-    zc:'我是周哥'
-  }
+
+const state = {
+  zc: '我是周哥'
 }
-export default app
+const mutations = {
+}
+const actions = {
+
+}
+
+export default {
+  state,
+  mutations,
+  actions,
+  namespaced: true
+}
