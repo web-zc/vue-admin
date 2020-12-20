@@ -59,18 +59,18 @@ module.exports = {
     https: false, // 编译失败时刷新页面
     hot: true, // 开启热加载
     hotOnly: false,
-  //  设置代理
-  proxy: {
-    '/api': {    
-      target: 'http://www.web-jshtml.cn/api',
-      ws: true,
-      changeOrigin: true,
-      pathRewrite:{
-          '^/api':''
+    //  设置代理
+    proxy: {
+      '/api': {
+        target: 'http://www.web-jshtml.cn/api',
+        ws: true,
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
       }
-  }
-},
-  
+    },
+
     overlay: { // 全屏模式下是否显示脚本错误
       warnings: true,
       errors: true
@@ -82,4 +82,6 @@ module.exports = {
    * 第三方插件配置
    */
   pluginOptions: {}
+
+
 }
